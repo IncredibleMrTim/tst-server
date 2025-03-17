@@ -1,8 +1,11 @@
 {
   "name": "tst-server",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "api/index.js",
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
