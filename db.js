@@ -8,7 +8,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 let database;
 
-export async function db() {
+export const dbPromise = (async () => {
     try {
         await client.connect();
         database = client.db('tst'); // Ensure the correct database name is used
@@ -17,10 +17,9 @@ export async function db() {
         console.error('Error connecting to MongoDB:', err);
         throw err;
     }
-}
+})();
 
 export function getDatabase() {
-    
     if (!database) {
         throw new Error('Database not initialized. Call db() first.');
     }

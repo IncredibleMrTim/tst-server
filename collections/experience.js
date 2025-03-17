@@ -1,9 +1,9 @@
-import { getDatabase, db } from '../db.js';
+import { getDatabase, db, dbPromise } from '../db.js';
 
 db();
 
 export async function getExperiences() {
-
+    await dbPromise;
     const database = getDatabase();
     const experiences = await database.collection('experience').find({}).toArray();
     return experiences;
