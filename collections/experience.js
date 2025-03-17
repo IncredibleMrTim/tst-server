@@ -1,6 +1,6 @@
 import { getDatabase, db, dbPromise } from '../db.js';
 
-db();
+
 
 export async function getExperiences() {
     await db()
