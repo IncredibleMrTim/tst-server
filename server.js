@@ -1,7 +1,7 @@
 import express from 'express';
 import { db } from './db.js';
 import cors from 'cors';
-import { getExperiences, addExperience, updateExperience, deleteExperience } from './collections/experience.js';
+import { getExperiences } from './collections/experience.js';
 
 const app = express();
 app.use(cors());
