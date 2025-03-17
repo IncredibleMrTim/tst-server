@@ -1,6 +1,7 @@
-import { getDatabase } from '../db.js';
+import { getDatabase, db } from '../db.js';
 
 export async function getExperiences() {
+    await db()
     const db = getDatabase();
     const experiences = await db.collection('experience').find({}).toArray();
     return experiences;

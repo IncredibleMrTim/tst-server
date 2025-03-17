@@ -20,7 +20,7 @@ export async function db() {
 }
 
 export function getDatabase() {
-    db();
+    
     if (!database) {
         throw new Error('Database not initialized. Call db() first.');
     }
