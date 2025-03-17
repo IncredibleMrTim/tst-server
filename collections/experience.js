@@ -1,4 +1,4 @@
-import { getDatabase, db, dbPromise } from '../db.js';
+import { getDatabase, db } from '../db.js';
 
 
 
