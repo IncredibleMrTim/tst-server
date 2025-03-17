@@ -22,39 +22,39 @@ app.get('/experience', async (req, res) => {
     }
 });
 
-app.post('/experience', async (req, res) => {
-    try {
-        const experience = req.body;
-        const result = await addExperience(experience);
-        res.status(201).json(result);
-    } catch (err) {
-        console.error('Error adding experience:', err); // Log the error for debugging
-        res.status(500).json({ error: err.message });
-    }
-});
+// app.post('/experience', async (req, res) => {
+//     try {
+//         const experience = req.body;
+//         const result = await addExperience(experience);
+//         res.status(201).json(result);
+//     } catch (err) {
+//         console.error('Error adding experience:', err); // Log the error for debugging
+//         res.status(500).json({ error: err.message });
+//     }
+// });
 
-app.put('/experience/:id', async (req, res) => {
-    try {
-        const id = req.params.id;
-        const experience = req.body;
-        const result = await updateExperience(id, experience);
-        res.json(result);
-    } catch (err) {
-        console.error('Error updating experience:', err); // Log the error for debugging
-        res.status(500).json({ error: err.message });
-    }
-});
+// app.put('/experience/:id', async (req, res) => {
+//     try {
+//         const id = req.params.id;
+//         const experience = req.body;
+//         const result = await updateExperience(id, experience);
+//         res.json(result);
+//     } catch (err) {
+//         console.error('Error updating experience:', err); // Log the error for debugging
+//         res.status(500).json({ error: err.message });
+//     }
+// });
 
-app.delete('/experience/:id', async (req, res) => {
-    try {
-        const id = req.params.id;
-        const result = await deleteExperience(id);
-        res.json(result);
-    } catch (err) {
-        console.error('Error deleting experience:', err); // Log the error for debugging
-        res.status(500).json({ error: err.message });
-    }
-});
+// app.delete('/experience/:id', async (req, res) => {
+//     try {
+//         const id = req.params.id;
+//         const result = await deleteExperience(id);
+//         res.json(result);
+//     } catch (err) {
+//         console.error('Error deleting experience:', err); // Log the error for debugging
+//         res.status(500).json({ error: err.message });
+//     }
+// });
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
