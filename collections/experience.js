@@ -3,7 +3,7 @@ import { getDatabase, db, dbPromise } from '../db.js';
 db();
 
 export async function getExperiences() {
-    await dbPromise;
+    await db()
     const database = getDatabase();
     const experiences = await database.collection('experience').find({}).toArray();
     return experiences;
