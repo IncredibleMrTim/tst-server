@@ -3,13 +3,13 @@ import { db } from '../db.js';
 import cors from 'cors';
 import { getExperiences, addExperience, updateExperience, deleteExperience } from '../collections/experience.js';
 
+db();
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 const port = 8080;
 
-db();
 
 app.get('/experience', async (req, res) => {
     try {
