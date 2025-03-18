@@ -8,7 +8,6 @@
   },
   "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && tsc-alias -p tsconfig.json && node server",
     "dev": "tsc && tsc-alias -p tsconfig.json && nodemon server",
     "build": "tsc && stc-alias -p tsconfig.json"
