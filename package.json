@@ -8,9 +8,9 @@
   },
   "license": "ISC",
   "scripts": {
-    "start": "npx tsc && npx tsc-alias -p tsconfig.json && node server",
+    "start": "tsc && tsc-alias -p tsconfig.json && node server",
     "dev": "npx tsc && npx tsc-alias -p tsconfig.json && nodemon server",
-    "build": "npx tsc && npx tsc-alias -p tsconfig.json"
+    "build": "tsc && tsc-alias -p tsconfig.json"
   },
   "author": "Tim Smart",
   "description": "",
