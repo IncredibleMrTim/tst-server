@@ -9,9 +9,10 @@
   "license": "ISC",
   "packageManager": "pnpm@8.6.0",
   "scripts": {
-    "start": "nodemon src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "start": "node dist/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preCommit": "tsc && tsc-alias"
+    "preCommit": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json"
   },
   "pre-commit": [
     "preCommit"
@@ -20,7 +21,6 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "body-parser": "^1.20.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
@@ -32,6 +32,7 @@
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
+    "body-parser": "^1.20.3",
     "nodemon": "^3.1.9",
     "pre-commit": "^1.2.2",
     "rimraf": "^6.0.1",
