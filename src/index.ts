@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import express from "express";
+import express, { Request, Response } from "express";
 import { db } from "./db";
 import cors from "cors";
 import {
@@ -16,7 +16,7 @@ app.use(express.json());
 
 const port = 8080;
 
-app.get("/experience", async (req, res) => {
+app.get("/experience", async (req: Request, res: Response) => {
   try {
     const experiences = await getExperiences();
     console.log("Experiences:", experiences); // Log the experiences to verify the data
@@ -27,7 +27,7 @@ app.get("/experience", async (req, res) => {
   }
 });
 
-app.post("/experience", async (req, res) => {
+app.post("/experience", async (req: Request, res: Response) => {
   try {
     const experience = req.body;
     const result = await addExperience(experience);
@@ -38,7 +38,7 @@ app.post("/experience", async (req, res) => {
   }
 });
 
-app.put("/experience/:id", async (req, res) => {
+app.put("/experience/:id", async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
     const experience = req.body;
@@ -50,7 +50,7 @@ app.put("/experience/:id", async (req, res) => {
   }
 });
 
-app.delete("/experience/:id", async (req, res) => {
+app.delete("/experience/:id", async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
     const result = await deleteExperience(id);
