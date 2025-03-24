@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import express, { Request, Response } from "express";
-import {Request}
+
 import { db } from "./db";
 import cors from "cors";
 import {
