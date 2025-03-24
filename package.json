@@ -38,6 +38,7 @@
     "pre-commit": "^1.2.2",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
-    "tsc-alias": "^1.8.11"
+    "tsc-alias": "^1.8.11",
+    "typescript": "^5.8.2"
   }
 }
