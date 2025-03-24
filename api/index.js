@@ -1,12 +1,12 @@
 import express from "express";
-import { db } from "./db";
+import { db } from "./db.js";
 import cors from "cors";
 import {
   getExperiences,
   addExperience,
   updateExperience,
   deleteExperience,
-} from "./collections/experience";
+} from "./collections/experience.js";
 
 db();
 const app = express();

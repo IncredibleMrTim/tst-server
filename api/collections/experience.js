@@ -1,4 +1,4 @@
-import { getDatabase, db } from "../db";
+import { getDatabase, db } from "../db.js";
 import { ObjectId } from "mongodb";
 
 export async function getExperiences() {
