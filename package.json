@@ -8,8 +8,9 @@
   },
   "license": "ISC",
   "scripts": {
-    "start": "tsc && tsc-alias -p tsconfig.json && node server",
-    "dev": "npx tsc && npx tsc-alias -p tsconfig.json && nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "dev": "nodemon server",
     "build": "tsc && tsc-alias -p tsconfig.json"
   },
   "author": "Tim Smart",
