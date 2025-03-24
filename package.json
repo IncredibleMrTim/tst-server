@@ -1,17 +1,21 @@
 {
   "name": "tst-server",
   "version": "1.0.0",
-  "main": "dist/api/index.js",
+  "main": "index.ts",
   "type": "module",
   "engines": {
     "node": "22.x"
   },
   "license": "ISC",
+  "packageManager": "pnpm@8.6.0",
   "scripts": {
+    "start": "nodemon src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
-    "dev": "nodemon server"
+    "preCommit": "tsc && tsc-alias"
   },
+  "pre-commit": [
+    "preCommit"
+  ],
   "author": "Tim Smart",
   "description": "",
   "dependencies": {
@@ -26,8 +30,12 @@
     "mongoose": "^8.12.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "nodemon": "^3.1.9",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.11"
   }
 }
