@@ -12,7 +12,7 @@
     "dev": "nodemon src/index.ts",
     "start": "node dist/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preCommit": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json"
+    "preCommit": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json && git add ."
   },
   "pre-commit": [
     "preCommit"
