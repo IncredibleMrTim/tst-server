@@ -1,7 +1,7 @@
 {
   "name": "tst-server",
   "version": "1.0.0",
-  "main": "api/index.js",
+  "main": "src/index.js",
   "type": "module",
   "engines": {
     "node": "22.x"
