@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import express, { Request, Response } from "express";
+import {Request}
 import { db } from "./db";
 import cors from "cors";
 import {
@@ -20,7 +21,7 @@ app.get("/experience", async (req: Request, res: Response) => {
   try {
     const experiences = await getExperiences();
     console.log("Experiences:", experiences); // Log the experiences to verify the data
-    res.json(experiences);
+    res.send(experiences);
   } catch (err: Error | any) {
     console.error("Error fetching experiences:", err); // Log the error for debugging
     res.status(500).json({ error: err.message });
@@ -31,7 +32,7 @@ app.post("/experience", async (req: Request, res: Response) => {
   try {
     const experience = req.body;
     const result = await addExperience(experience);
-    res.status(201).json(result);
+    res.status(201).send(result);
   } catch (err: Error | any) {
     console.error("Error adding experience:", err); // Log the error for debugging
     res.status(500).json({ error: err.message });
@@ -43,7 +44,7 @@ app.put("/experience/:id", async (req: Request, res: Response) => {
     const id = req.params.id;
     const experience = req.body;
     const result = await updateExperience(id, experience);
-    res.json(result);
+    res.send(result);
   } catch (err: Error | any) {
     console.error("Error updating experience:", err); // Log the error for debugging
     res.status(500).json({ error: err.message });
@@ -54,7 +55,7 @@ app.delete("/experience/:id", async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
     const result = await deleteExperience(id);
-    res.json(result);
+    res.send(result);
   } catch (err: Error | any) {
     console.error("Error deleting experience:", err); // Log the error for debugging
     res.status(500).json({ error: err.message });
