@@ -2,5 +2,5 @@
   "watch": ["/"],
   "ext": ".js",
   "ignore": [],
-  "exec": "node dist/src/index.js"
+  "exec": "node api/index.js"
 }
