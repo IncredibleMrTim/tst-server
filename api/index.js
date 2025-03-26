@@ -1,64 +1,23 @@
 import express from "express";
 import { db } from "./db.js";
 import cors from "cors";
-import {
-  getExperiences,
-  addExperience,
-  updateExperience,
-  deleteExperience,
-} from "./collections/experience.js";
+import experienceRouter from "./routes/experience.js";
+import skillsRouter from "./routes/skills.js";
+import compression from "compression";
+import bodyParser from "body-parser";
 
 db();
 const app = express();
 app.use(cors());
+app.use(compression());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 const port = 8080;
 
-app.get("/experience", async (req, res) => {
-  try {
-    const experiences = await getExperiences();
-    console.log("Experiences:", experiences); // Log the experiences to verify the data
-    res.send(experiences);
-  } catch (err) {
-    console.error("Error fetching experiences:", err); // Log the error for debugging
-    res.status(500).json({ error: err.message });
-  }
-});
-
-app.post("/experience", async (req, res) => {
-  try {
-    const experience = req.body;
-    const result = await addExperience(experience);
-    res.status(201).send(result);
-  } catch (err) {
-    console.error("Error adding experience:", err); // Log the error for debugging
-    res.status(500).json({ error: err.message });
-  }
-});
-
-app.put("/experience/:id", async (req, res) => {
-  try {
-    const id = req.params.id;
-    const experience = req.body;
-    const result = await updateExperience(id, experience);
-    res.send(result);
-  } catch (err) {
-    console.error("Error updating experience:", err); // Log the error for debugging
-    res.status(500).json({ error: err.message });
-  }
-});
-
-app.delete("/experience/:id", async (req, res) => {
-  try {
-    const id = req.params.id;
-    const result = await deleteExperience(id);
-    res.send(result);
-  } catch (err) {
-    console.error("Error deleting experience:", err); // Log the error for debugging
-    res.status(500).json({ error: err.message });
-  }
-});
+app.use('/experience', experienceRouter);
+app.use('/skills', skillsRouter);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
